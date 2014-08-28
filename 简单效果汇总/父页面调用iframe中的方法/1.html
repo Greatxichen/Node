@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<input type="button" onclick="test()" value="test iframe" />
+<script>
+function test(){
+    alert(document.getElementById("iframe").contentWindow.b);
+    alert(window.frames[0].window.b);
+}
+</script>
+<iframe src="2.html" id="iframe"></iframe>
+</body>
+</html>

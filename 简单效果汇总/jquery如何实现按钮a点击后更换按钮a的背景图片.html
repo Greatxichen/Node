@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<title>无标题文档</title>
+<style type="text/css">
+a{color:#333}
+.bg1.focus{background-color:#666}
+.bg2.focus{background-color:#999}
+.bg3.focus{background-color:#ccc}
+.bg4.focus{background-color:#f00}
+.bg5.focus{background-color:#00FF00}
+.bg6.focus{background-color:#0000FF}
+</style>
+<script src="js/jquery-1.11.1.js"></script>
+</head>
+ 
+<body>
+<div id="sidebar">
+       <a class="bg1" href="#">aaaaaaaaaaaaaa</a>
+       <hr/>
+       <a class="bg2" href="#">bbbbbbbbbbbb</a>
+       <hr/>
+       <a class="bg3" href="#">cccccccccccccccccccc</a>
+       <hr/>
+       <a class="bg4"href="#">dddddddddddddddddddddddddd</a>
+       <hr/>
+       <a class="bg5" href="#">eeeeeeeeeee</a>
+       <hr/>
+       <a class="bg6" href="#">vvvvvvvvvvvvvvvvvvvvvvvvvvvv</a>
+       <hr/>
+    </div>
+<script type="text/javascript">
+jQuery(function($){
+    $('a').click(function(){
+        $('a').not($(this)).removeClass('focus');
+        $(this).addClass('focus');
+        return false;
+    }).mouseover(function(){
+        $('a').not($(this)).removeClass('focus');
+        $(this).addClass('focus');
+        return false;   
+    });
+});
+</script>
+</body>
+</html>

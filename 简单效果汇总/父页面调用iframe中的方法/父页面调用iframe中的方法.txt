@@ -1,0 +1,25 @@
+
+父页面a.html****************************************************************
+<body>
+<input type="button" onclick="test()" value="test iframe" />
+<script>
+function test(){
+    alert(document.getElementById("iframe").contentWindow.b);
+    alert(window.frames[0].window.b);
+}
+</script>
+<iframe src="b.html" id="iframe"></iframe>
+</body>
+ 
+子页面b.html*************************************************************************
+ 
+<body>
+bbbbb
+<script>
+var b = 1;
+</script>
+</body>
+ 
+ 
+注意，在chrome下，只有这两个文件存放在服务器上时，才可用。
+IE FF Opera Safari本地文件就可用

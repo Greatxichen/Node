@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery鼠标悬停半透明遮罩效果</title>
+	<style>
+	*{margin:0 0;padding:0 0;}
+		.box{
+			width:800px;
+			height:400px;
+			margin:50px auto;
+			background: gray;
+			overflow:hidden;
+		}
+		.box ul li{
+			width:200px;
+			height:200px;
+			background-color: green;
+			border:1px solid red;
+			list-style: none;
+			float: left;
+			position: relative;
+		}
+		.box ul li .dask{
+			width:200px;
+			height:200px;
+			background: black;
+			/*opacity:0.5;*/
+			position: absolute;
+			top: -200px;
+		}
+		.box ul li .dask p{
+			color:white;
+			font-size: 45px;
+			text-align: center;
+			line-height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li>one
+				<div class="dask">
+					<p>1</p>
+				</div>
+			</li>
+			<li>two
+				<div class="dask">
+					<p>2</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="JS/jquery.min.js"></script>
+<!-- stop()停止当前正在运行的动画： -->
+<!-- 搜索所有段落中的后代 span元素，并将其颜色设置为红色：
+$("p").find("span").css('color','red'); -->
+<!-- delay()对被选元素的所有排队函数（仍未运行）设置延迟 -->
+<script>
+	$(function(){
+		$('.box ul li').hover(
+			function(){
+			$(this).find('.dask').stop().delay(50).animate({'top':0,opacity:0.5},300)
+			},
+			function(){
+				$(this).find('.dask').stop().animate({'top':-200,opacity:0},300)
+			}
+		)
+	})
+</script>
+</html>
